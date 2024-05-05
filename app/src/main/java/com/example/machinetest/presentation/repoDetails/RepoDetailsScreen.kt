@@ -51,9 +51,9 @@ fun RepoDetailsScreen(
                 }
             } else {
 
-                val singleItem = repoUiState.repoDetails.items?.filter { it?.id.toString() == item }
+                val singleItem = repoUiState.repoDetails.filter { it.id.toString() == item }
 
-                if (!singleItem.isNullOrEmpty()){
+                if (singleItem.isNotEmpty()){
                     DetailsScreenData(item = singleItem[0])
                 }
             }

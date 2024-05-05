@@ -4,169 +4,186 @@ package com.example.machinetest.data.remote.dto
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import android.os.Parcelable
+import com.example.machinetest.data.local.RepoEntity
 import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class Item(
     @Json(name = "allow_forking")
-    val allowForking: Boolean?,
+    val allowForking: Boolean? = null,
     @Json(name = "archive_url")
-    val archiveUrl: String?,
+    val archiveUrl: String? = null,
     @Json(name = "archived")
-    val archived: Boolean?,
+    val archived: Boolean? = null,
     @Json(name = "assignees_url")
-    val assigneesUrl: String?,
+    val assigneesUrl: String? = null,
     @Json(name = "blobs_url")
-    val blobsUrl: String?,
+    val blobsUrl: String? = null,
     @Json(name = "branches_url")
-    val branchesUrl: String?,
+    val branchesUrl: String? = null,
     @Json(name = "clone_url")
-    val cloneUrl: String?,
+    val cloneUrl: String? = null,
     @Json(name = "collaborators_url")
-    val collaboratorsUrl: String?,
+    val collaboratorsUrl: String? = null,
     @Json(name = "comments_url")
-    val commentsUrl: String?,
+    val commentsUrl: String? = null,
     @Json(name = "commits_url")
-    val commitsUrl: String?,
+    val commitsUrl: String? = null,
     @Json(name = "compare_url")
-    val compareUrl: String?,
+    val compareUrl: String? = null,
     @Json(name = "contents_url")
-    val contentsUrl: String?,
+    val contentsUrl: String? = null,
     @Json(name = "contributors_url")
-    val contributorsUrl: String?,
+    val contributorsUrl: String? = null,
     @Json(name = "created_at")
-    val createdAt: String?,
+    val createdAt: String? = null,
     @Json(name = "default_branch")
-    val defaultBranch: String?,
+    val defaultBranch: String? = null,
     @Json(name = "deployments_url")
-    val deploymentsUrl: String?,
+    val deploymentsUrl: String? = null,
     @Json(name = "description")
     val description: String?,
     @Json(name = "disabled")
-    val disabled: Boolean?,
+    val disabled: Boolean? = null,
     @Json(name = "downloads_url")
-    val downloadsUrl: String?,
+    val downloadsUrl: String? = null,
     @Json(name = "events_url")
-    val eventsUrl: String?,
+    val eventsUrl: String? = null,
     @Json(name = "fork")
-    val fork: Boolean?,
+    val fork: Boolean? = null,
     @Json(name = "forks")
-    val forks: Int?,
+    val forks: Int? = null,
     @Json(name = "forks_count")
-    val forksCount: Int?,
+    val forksCount: Int? = null,
     @Json(name = "forks_url")
-    val forksUrl: String?,
+    val forksUrl: String? = null,
     @Json(name = "full_name")
-    val fullName: String?,
+    val fullName: String? = null,
     @Json(name = "git_commits_url")
-    val gitCommitsUrl: String?,
+    val gitCommitsUrl: String? = null,
     @Json(name = "git_refs_url")
-    val gitRefsUrl: String?,
+    val gitRefsUrl: String? = null,
     @Json(name = "git_tags_url")
-    val gitTagsUrl: String?,
+    val gitTagsUrl: String? = null,
     @Json(name = "git_url")
-    val gitUrl: String?,
+    val gitUrl: String? = null,
     @Json(name = "has_discussions")
-    val hasDiscussions: Boolean?,
+    val hasDiscussions: Boolean? = null,
     @Json(name = "has_downloads")
-    val hasDownloads: Boolean?,
+    val hasDownloads: Boolean? = null,
     @Json(name = "has_issues")
-    val hasIssues: Boolean?,
+    val hasIssues: Boolean? = null,
     @Json(name = "has_pages")
-    val hasPages: Boolean?,
+    val hasPages: Boolean? = null,
     @Json(name = "has_projects")
-    val hasProjects: Boolean?,
+    val hasProjects: Boolean? = null,
     @Json(name = "has_wiki")
-    val hasWiki: Boolean?,
+    val hasWiki: Boolean? = null,
     @Json(name = "homepage")
-    val homepage: String?,
+    val homepage: String? = null,
     @Json(name = "hooks_url")
-    val hooksUrl: String?,
+    val hooksUrl: String? = null,
     @Json(name = "html_url")
-    val htmlUrl: String?,
+    val htmlUrl: String? = null,
     @Json(name = "id")
     val id: Int?,
     @Json(name = "is_template")
-    val isTemplate: Boolean?,
+    val isTemplate: Boolean? = null,
     @Json(name = "issue_comment_url")
-    val issueCommentUrl: String?,
+    val issueCommentUrl: String? = null,
     @Json(name = "issue_events_url")
-    val issueEventsUrl: String?,
+    val issueEventsUrl: String? = null,
     @Json(name = "issues_url")
-    val issuesUrl: String?,
+    val issuesUrl: String? = null,
     @Json(name = "keys_url")
-    val keysUrl: String?,
+    val keysUrl: String? = null,
     @Json(name = "labels_url")
-    val labelsUrl: String?,
+    val labelsUrl: String? = null,
     @Json(name = "language")
-    val language: String?,
+    val language: String? = null,
     @Json(name = "languages_url")
-    val languagesUrl: String?,
+    val languagesUrl: String? = null,
     @Json(name = "license")
-    val license: License?,
+    val license: License? = null,
     @Json(name = "merges_url")
-    val mergesUrl: String?,
+    val mergesUrl: String? = null,
     @Json(name = "milestones_url")
-    val milestonesUrl: String?,
+    val milestonesUrl: String? = null,
     @Json(name = "mirror_url")
-    val mirrorUrl: String?,
+    val mirrorUrl: String? = null,
     @Json(name = "name")
     val name: String?,
     @Json(name = "node_id")
-    val nodeId: String?,
+    val nodeId: String? = null,
     @Json(name = "notifications_url")
-    val notificationsUrl: String?,
+    val notificationsUrl: String? = null,
     @Json(name = "open_issues")
-    val openIssues: Int?,
+    val openIssues: Int? = null,
     @Json(name = "open_issues_count")
-    val openIssuesCount: Int?,
+    val openIssuesCount: Int? = null,
     @Json(name = "owner")
     val owner: Owner?,
     @Json(name = "private")
-    val `private`: Boolean?,
+    val `private`: Boolean? = null,
     @Json(name = "pulls_url")
-    val pullsUrl: String?,
+    val pullsUrl: String? = null,
     @Json(name = "pushed_at")
-    val pushedAt: String?,
+    val pushedAt: String? = null,
     @Json(name = "releases_url")
-    val releasesUrl: String?,
+    val releasesUrl: String? = null,
     @Json(name = "score")
-    val score: Double?,
+    val score: Double? = null,
     @Json(name = "size")
-    val size: Int?,
+    val size: Int? = null,
     @Json(name = "ssh_url")
-    val sshUrl: String?,
+    val sshUrl: String? = null,
     @Json(name = "stargazers_count")
-    val stargazersCount: Int?,
+    val stargazersCount: Int? = null,
     @Json(name = "stargazers_url")
-    val stargazersUrl: String?,
+    val stargazersUrl: String? = null,
     @Json(name = "statuses_url")
-    val statusesUrl: String?,
+    val statusesUrl: String? = null,
     @Json(name = "subscribers_url")
-    val subscribersUrl: String?,
+    val subscribersUrl: String? = null,
     @Json(name = "subscription_url")
-    val subscriptionUrl: String?,
+    val subscriptionUrl: String? = null,
     @Json(name = "svn_url")
-    val svnUrl: String?,
+    val svnUrl: String? = null,
     @Json(name = "tags_url")
-    val tagsUrl: String?,
+    val tagsUrl: String? = null,
     @Json(name = "teams_url")
-    val teamsUrl: String?,
+    val teamsUrl: String? = null,
     @Json(name = "topics")
-    val topics: List<String?>?,
+    val topics: List<String?>? = null,
     @Json(name = "trees_url")
-    val treesUrl: String?,
+    val treesUrl: String? = null,
     @Json(name = "updated_at")
-    val updatedAt: String?,
+    val updatedAt: String? = null,
     @Json(name = "url")
-    val url: String?,
+    val url: String? = null,
     @Json(name = "visibility")
-    val visibility: String?,
+    val visibility: String? = null,
     @Json(name = "watchers")
-    val watchers: Int?,
+    val watchers: Int? = null,
     @Json(name = "watchers_count")
-    val watchersCount: Int?,
+    val watchersCount: Int? = null,
     @Json(name = "web_commit_signoff_required")
-    val webCommitSignoffRequired: Boolean?
-) : Parcelable
+    val webCommitSignoffRequired: Boolean? = null
+
+
+) : Parcelable {
+
+    fun toRepoEntity(): RepoEntity {
+        return RepoEntity(
+            id = id ?: 0,
+            name = name ?: "",
+            description = description ?: "",
+            fullName = fullName ?: "",
+            avatarUrl = owner?.avatarUrl ?: "",
+
+            )
+    }
+
+}
+

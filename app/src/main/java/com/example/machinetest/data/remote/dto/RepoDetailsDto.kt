@@ -12,7 +12,7 @@ data class RepoDetailsDto(
     @Json(name = "incomplete_results")
     val incompleteResults: Boolean?,
     @Json(name = "items")
-    val items: List<Item?>?,
+    val items: List<Item>?,
     @Json(name = "total_count")
     val totalCount: Int?
 ) : Parcelable

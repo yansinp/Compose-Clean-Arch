@@ -1,5 +1,6 @@
 package com.example.machinetest.core.di
 
+import com.example.machinetest.data.local.RepoDao
 import com.example.machinetest.data.remote.RepoApi
 import com.example.machinetest.data.remote.RepoRepositoryImpl
 import com.example.machinetest.domain.RepoRepository
@@ -16,8 +17,9 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideArticleRepository(
-        repoApi: RepoApi
+        repoApi: RepoApi,
+        repoDao: RepoDao
     ): RepoRepository {
-        return RepoRepositoryImpl(repoApi)
+        return RepoRepositoryImpl(repoApi,repoDao)
     }
 }
