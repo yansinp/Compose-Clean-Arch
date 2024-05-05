@@ -23,12 +23,15 @@ class RepoRepositoryImpl @Inject constructor(
 ) : RepoRepository {
     override fun getRepo(
         query: String,
+        page:Int,
+        perPage:Int,
         isNetworkAvailable: Boolean
     ): Flow<Resource<List<Item>>> = flow {
+
         emit(Resource.Loading)
 
         if (isNetworkAvailable) {
-            repoApi.getRepos(query, 1, 10)
+            repoApi.getRepos(query, page,perPage)
                 .suspendOnSuccess {
                     val response = this.data
                     if (!response.items.isNullOrEmpty()) {
@@ -61,5 +64,6 @@ class RepoRepositoryImpl @Inject constructor(
             }
         }
     }
+
 
 }

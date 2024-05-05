@@ -23,38 +23,39 @@ class RepoViewModel @Inject constructor(
         private set
 
     init {
-        getRepo("Flutter")
+        getRepo("Compose In Android", 1, 20)
     }
 
-    fun getRepo(query: String) = viewModelScope.launch {
-        repoRepository.getRepo(query,Utils.isInternetAvailable(application)).collectLatest { repoDetails ->
+    fun getRepo(query: String, page: Int, perPage: Int) = viewModelScope.launch {
+        repoRepository.getRepo(query, page, perPage, Utils.isInternetAvailable(application))
+            .collectLatest { repoDetails ->
 
-            when (repoDetails) {
-                Resource.Empty -> {
+                when (repoDetails) {
+                    Resource.Empty -> {
+
+                    }
+
+                    is Resource.Error -> {
+                        repoState.value =
+                            repoState.value.copy(error = repoDetails.error, loading = false)
+                    }
+
+                    Resource.Loading -> {
+                        repoState.value = repoState.value.copy(loading = true)
+                    }
+
+                    is Resource.Success -> {
+                        repoState.value = repoState.value.copy(
+                            error = "",
+                            loading = false,
+                            repoDetails = repoDetails.value
+                        )
+                    }
+
 
                 }
 
-                is Resource.Error -> {
-                    repoState.value =
-                        repoState.value.copy(error = repoDetails.error, loading = false)
-                }
-
-                Resource.Loading -> {
-                    repoState.value = repoState.value.copy(loading = true)
-                }
-
-                is Resource.Success -> {
-                    repoState.value = repoState.value.copy(
-                        error = "",
-                        loading = false,
-                        repoDetails = repoDetails.value
-                    )
-                }
-
-                else -> {}
             }
-
-        }
     }
 
 

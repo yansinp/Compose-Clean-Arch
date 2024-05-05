@@ -8,5 +8,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface RepoRepository {
 
-    fun getRepo(query : String , isNetworkAvailable : Boolean):Flow<Resource<List<Item>>>
+    fun getRepo(
+        query: String,
+        page: Int,
+        perPage: Int,
+        isNetworkAvailable: Boolean
+    ): Flow<Resource<List<Item>>>
 }

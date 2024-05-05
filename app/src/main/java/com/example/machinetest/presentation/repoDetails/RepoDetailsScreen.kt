@@ -95,18 +95,7 @@ fun DetailsScreenData(item: Item?) {
             )
 
             Text(
-                text = ("Width : " + item?.description),
-                modifier = Modifier.fillMaxWidth(),
-                fontWeight = FontWeight.Light,
-                color = Color.Gray,
-                style = MaterialTheme.typography.titleMedium,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-                fontSize = 18.sp
-            )
-
-            Text(
-                text = ("Height : " + item?.blobsUrl),
+                text = ("Description : " + item?.description),
                 modifier = Modifier.fillMaxWidth(),
                 fontWeight = FontWeight.Light,
                 color = Color.Gray,
@@ -119,7 +108,7 @@ fun DetailsScreenData(item: Item?) {
             Row(modifier = Modifier.wrapContentSize()) {
 
                 Text(
-                    text = ("Download : " + item?.downloadsUrl),
+                    text = ("Git Url : " + item?.downloadsUrl),
                     modifier = Modifier
                         .wrapContentSize()
                         .padding(start = 4.dp),
